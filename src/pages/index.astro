@@ -1,16 +1,31 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Teddy's Burger</title>
+  </head>
+  <body class="min-h-screen">
+    <main class="container mx-auto px-4 py-16">
+      <h1 class="text-5xl font-bold mb-4">Teddy's Burger</h1>
+      <p class="text-xl mb-8">Die besten Burger der Stadt</p>
+      <button
+        class="bg-accent hover:bg-accent-hover text-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
+      >
+        Zur Speisekarte
+      </button>
+
+      <div class="mt-12 p-6 bg-background-alt rounded-lg">
+        <h2 class="text-2xl mb-4">Theme Test</h2>
+        <p class="mb-2">Background: <span class="text-accent">Black (#000000)</span></p>
+        <p class="mb-2">Alt Background: <span class="text-accent">Dark Grey (#111111)</span></p>
+        <p class="mb-2">Accent Color: <span class="text-accent">Burnt Orange (#ab3f1b)</span></p>
+      </div>
+    </main>
+  </body>
 </html>

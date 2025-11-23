@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+/* Google Fonts via @fontsource */
+@import '@fontsource/oswald/400.css';
+@import '@fontsource/oswald/500.css';
+@import '@fontsource/oswald/600.css';
+@import '@fontsource/oswald/700.css';
+@import '@fontsource/lato/400.css';
+@import '@fontsource/lato/700.css';
+
+/* Custom theme configuration for Teddy's Burger */
+@theme {
+  /* Colors */
+  --color-background: #000000;
+  --color-background-alt: #111111;
+  --color-foreground: #ffffff;
+  --color-accent: #ab3f1b;
+  --color-accent-hover: #c4491f;
+  --color-accent-dark: #8a3216;
+
+  /* Font families - will be configured with Google Fonts in Step 1.4 */
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+}
+
+/* Headings use Oswald font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}

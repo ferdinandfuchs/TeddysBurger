@@ -1,0 +1,8 @@
+{
+  "name": "Teddy's Burger",
+  "description": "mit Rindfleisch-Patty, Cheddar, frischem Salat, Tomaten, Gewürzgurken, Kartoffelrösti, Rindfleischspeck und hausgemachter Soße",
+  "price": 10.9,
+  "image": "/uploads/menu/teddys-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

@@ -6,7 +6,7 @@ interface MenuItemData {
   description?: string;
   price: number;
   image?: string;
-  category: 'burgers' | 'sides' | 'drinks';
+  category: 'burgers' | 'kids' | 'fingerfood' | 'sides' | 'drinks';
   available?: boolean;
 }
 
@@ -24,6 +24,8 @@ const {
 const categories = [
   { id: 'all', label: 'Alle' },
   { id: 'burgers', label: 'Burger' },
+  { id: 'kids', label: 'Kids' },
+  { id: 'fingerfood', label: 'Fingerfood' },
   { id: 'sides', label: 'Beilagen' },
   { id: 'drinks', label: 'Getränke' },
 ];

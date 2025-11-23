@@ -1,0 +1,8 @@
+{
+  "name": "Sprite 0,33 l",
+  "description": "Zitronenlimonade, gesüßt, Zucker, mit Kohlensäure",
+  "price": 3.25,
+  "image": "/uploads/menu/sprite.jpg",
+  "category": "drinks",
+  "available": true
+}

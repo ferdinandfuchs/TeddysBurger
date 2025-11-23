@@ -66,6 +66,11 @@ export default defineConfig({
           },
           {
             type: 'string',
+            name: 'domain',
+            label: 'Website Domain',
+          },
+          {
+            type: 'string',
             name: 'address',
             label: 'Address',
             ui: {
@@ -163,6 +168,8 @@ export default defineConfig({
             required: true,
             options: [
               { value: 'burgers', label: 'Burgers' },
+              { value: 'kids', label: 'Kids Menus' },
+              { value: 'fingerfood', label: 'Fingerfood' },
               { value: 'sides', label: 'Sides' },
               { value: 'drinks', label: 'Drinks' },
             ],
@@ -213,6 +220,11 @@ export default defineConfig({
                 type: 'image',
                 name: 'backgroundImage',
                 label: 'Background Image',
+              },
+              {
+                type: 'image',
+                name: 'backgroundVideo',
+                label: 'Background Video (MP4)',
               },
               {
                 type: 'string',

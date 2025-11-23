@@ -1,0 +1,8 @@
+{
+  "name": "Lift Apfelschorle 0,33 l",
+  "description": "Apfelsaftschorle, Mischung aus Apfelsaft und Mineralwasser, ohne Zuckerzusatz, mit Kohlensäure",
+  "price": 3.35,
+  "image": "/uploads/menu/lift-apfelschorle.jpg",
+  "category": "drinks",
+  "available": true
+}

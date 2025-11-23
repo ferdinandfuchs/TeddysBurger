@@ -1,0 +1,8 @@
+{
+  "name": "Oklahoma Onion Burger",
+  "description": "mit Rindfleisch-Patty, Cheddar, karamellisierten Zwiebeln, Gewürzgurken und hausgemachter Soße",
+  "price": 9.5,
+  "image": "/uploads/menu/oklahoma-onion-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

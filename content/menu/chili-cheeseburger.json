@@ -1,0 +1,8 @@
+{
+  "name": "Chili-Cheeseburger",
+  "description": "mit Rindfleisch-Patty, Cheddar, Jalapeños und selbstgemachter Chili-Cheese-Soße",
+  "price": 8.9,
+  "image": "/uploads/menu/chili-cheeseburger.jpg",
+  "category": "burgers",
+  "available": true
+}

@@ -61,7 +61,7 @@ const formattedMenuItems = menuItems.map((item: any) => ({
   description: item.description,
   price: item.price,
   image: item.image,
-  category: item.category as 'burgers' | 'sides' | 'drinks',
+  category: item.category as 'burgers' | 'kids' | 'fingerfood' | 'sides' | 'drinks',
   available: item.available ?? true,
 }));
 
@@ -80,6 +80,7 @@ const formattedGalleryImages = galleryImages.map((item: any) => ({
       title={pageContent?.hero?.title || "Teddy's Burger"}
       subtitle={pageContent?.hero?.subtitle}
       backgroundImage={pageContent?.hero?.backgroundImage}
+      backgroundVideo={pageContent?.hero?.backgroundVideo || "/uploads/hero-video.mp4"}
       buttonText={pageContent?.hero?.buttonText || "Zur Speisekarte"}
     />
 
@@ -90,7 +91,6 @@ const formattedGalleryImages = galleryImages.map((item: any) => ({
       address={locationData?.address}
       phone={locationData?.phone}
       openingHours={locationData?.openingHours || []}
-      image={locationData?.image}
     />
 
     <Gallery

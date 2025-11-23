@@ -1,0 +1,8 @@
+{
+  "name": "Mozzarella-Sticks",
+  "description": "",
+  "price": 4.9,
+  "image": "/uploads/menu/mozzarella-sticks.jpg",
+  "category": "sides",
+  "available": true
+}

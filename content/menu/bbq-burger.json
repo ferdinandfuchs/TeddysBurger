@@ -1,0 +1,8 @@
+{
+  "name": "BBQ Burger",
+  "description": "mit Rindfleisch-Patty, Cheddar, Rindfleischspeck, karamellisierten Zwiebeln und Barbecuesoße",
+  "price": 8.9,
+  "image": "/uploads/menu/bbq-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

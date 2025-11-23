@@ -1,0 +1,8 @@
+{
+  "name": "Fanta 0,33 l",
+  "description": "Kohlensäurehaltiges Erfrischungsgetränk mit Orangengeschmack, Zucker",
+  "price": 3.25,
+  "image": "/uploads/menu/fanta.jpg",
+  "category": "drinks",
+  "available": true
+}

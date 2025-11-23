@@ -1,7 +1,8 @@
 {
   "name": "Veggie Burger",
-  "description": "Hausgemachter Gemüse-Patty mit Avocado, Tomaten und Joghurt-Dressing",
-  "price": 10.5,
+  "description": "mit pflanzlichem Patty, Veggie-Käse, Ketchup, Senf, Gewürzgurken und Zwiebeln",
+  "price": 7.9,
+  "image": "/uploads/menu/veggie-burger.jpg",
   "category": "burgers",
   "available": true
 }

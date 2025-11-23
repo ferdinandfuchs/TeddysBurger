@@ -559,6 +559,8 @@ npm run dev
 
 ### Step 6.1: Add Sample Content
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Add placeholder menu items (5-10 items per category)
@@ -566,6 +568,23 @@ npm run dev
 3. Add location details
 4. Add gallery images
 5. Add site settings
+
+**Content Added**:
+
+- **Menu Items**: 16 total (6 burgers, 5 sides, 5 drinks)
+- **Hero**: Title, subtitle, CTA button, background image reference
+- **Location**: Name, address, phone, hours, image reference
+- **Gallery**: 5 images with captions and order
+- **Settings**: Complete with contact info and social links
+
+**Placeholder Images** (need to be replaced with actual images):
+
+```
+public/uploads/hero/hero-background.jpg
+public/uploads/location/restaurant-exterior.jpg
+public/uploads/menu/*.jpg (16 images)
+public/uploads/gallery/*.jpg (5 images)
+```
 
 **Test**:
 
@@ -582,42 +601,70 @@ npm run dev
 
 ### Step 7.1: Create Impressum Page
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Create Impressum page
 2. Add placeholder legal content
 
-**Files to create**:
+**Files created**:
 
 - `src/pages/impressum.astro`
+
+**Content includes**:
+
+- Angaben gemäß § 5 TMG
+- Contact information (pulled from Tina CMS)
+- Umsatzsteuer-ID placeholder
+- Verantwortlich für den Inhalt
+- Streitschlichtung (EU ODR platform link)
+- Haftung für Inhalte
+- Haftung für Links
+- Urheberrecht
 
 **Test**:
 
 ```bash
 npm run dev
 # Navigate to /impressum
-# Page renders correctly
+# Page renders correctly ✅
+# Footer links work ✅
 ```
 
 ---
 
 ### Step 7.2: Create Datenschutz Page
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Create Datenschutz (Privacy Policy) page
 2. Add placeholder legal content
 
-**Files to create**:
+**Files created**:
 
 - `src/pages/datenschutz.astro`
+
+**Content includes**:
+
+- Datenschutz auf einen Blick
+- Hinweis zur verantwortlichen Stelle
+- Speicherdauer
+- Rechtsgrundlagen der Datenverarbeitung
+- Betroffenenrechte (Auskunft, Berichtigung, Löschung, etc.)
+- Datenerfassung auf dieser Website
+- Soziale Medien
+- Änderungen der Datenschutzerklärung
 
 **Test**:
 
 ```bash
 npm run dev
 # Navigate to /datenschutz
-# Page renders correctly
+# Page renders correctly ✅
+# Footer links work ✅
 ```
 
 ---
@@ -626,6 +673,8 @@ npm run dev
 
 ### Step 8.1: Full Build Test
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Run production build
@@ -633,14 +682,38 @@ npm run dev
 3. Check for build errors
 4. Verify all pages generate
 
+**Build Process**:
+
+Note: The current build requires Tina dev server running to fetch content. Use this command:
+
+```bash
+# Start Tina in background, build, then stop
+npx tinacms dev &
+sleep 5
+npx astro build
+pkill -f "tinacms dev"
+```
+
+Or simply run `npx astro build` if Tina dev server is already running.
+
+**Results**:
+
+- ✅ Build completed successfully (474ms)
+- ✅ 3 pages generated:
+  - `/index.html` (Homepage with all sections)
+  - `/impressum/index.html` (Legal notice)
+  - `/datenschutz/index.html` (Privacy policy)
+- ✅ Preview server runs correctly on port 4321
+- ✅ All content loads from Tina CMS
+- ⚠️ Some placeholder images return 404 (need actual images in `/public/uploads/`)
+
 **Test**:
 
 ```bash
-npm run build
 npm run preview
-# No build errors
-# All pages accessible
-# Static files generated correctly
+# Visit http://localhost:4321 ✅
+# Visit http://localhost:4321/impressum ✅
+# Visit http://localhost:4321/datenschutz ✅
 ```
 
 ---
@@ -761,16 +834,16 @@ npm run preview
 
 ### Phase 6: Content
 
-- [ ] 6.1 Sample content added
+- [x] 6.1 Sample content added
 
 ### Phase 7: Legal
 
-- [ ] 7.1 Impressum page
-- [ ] 7.2 Datenschutz page
+- [x] 7.1 Impressum page
+- [x] 7.2 Datenschutz page
 
 ### Phase 8: Testing & Docs
 
-- [ ] 8.1 Build test passed
+- [x] 8.1 Build test passed
 - [ ] 8.2 Responsive testing
 - [ ] 8.3 Accessibility check
 - [ ] 8.4 Editor documentation

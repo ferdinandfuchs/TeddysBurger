@@ -1,7 +1,8 @@
 {
   "name": "Onion Rings",
-  "description": "Goldbraun frittierte Zwiebelringe mit Dip",
-  "price": 4.5,
+  "description": "",
+  "price": 4.9,
+  "image": "/uploads/menu/onion-rings.jpg",
   "category": "sides",
   "available": true
 }

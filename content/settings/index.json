@@ -1,8 +1,9 @@
 {
   "name": "Teddy's Burger",
   "tagline": "Where every bite is a hug",
-  "phone": "0711 340 89110",
-  "email": "info@deineEmail.de",
+  "phone": "+49 171 161 1800",
+  "email": "info@teddys-burger-stuttgart.de",
+  "domain": "www.teddys-burger-stuttgart.de",
   "address": "Bahnhofstraße 3, 70771 Leinfelden-Echterdingen",
   "openingHours": [
     {
@@ -19,7 +20,6 @@
     }
   ],
   "socialLinks": {
-    "instagram": "https://instagram.com/teddysburger",
-    "facebook": "https://facebook.com/teddysburger"
+    "instagram": "https://www.instagram.com/teddys.smashburger/?igsh=aWY4a2VqczVtejBr"
   }
 }

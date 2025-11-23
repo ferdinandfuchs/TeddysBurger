@@ -1,0 +1,8 @@
+{
+  "name": "3rd Street Burger",
+  "description": "mit Rindfleisch-Patty, Cheddar, Gewürzgurken, frischem Salat, Zwiebeln und hausgemachter Soße",
+  "price": 8.9,
+  "image": "/uploads/menu/3rd-street-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

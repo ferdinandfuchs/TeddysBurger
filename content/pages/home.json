@@ -2,7 +2,7 @@
   "hero": {
     "title": "Teddy's Burger",
     "subtitle": "where every bite is a hug",
-    "backgroundImage": "",
+    "backgroundImage": "/uploads/hero/hero-background.jpg",
     "buttonText": "Zur Speisekarte"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "Crispy Chicken Burger",
+  "description": "mit knusprigem Hähnchenfleisch, Cheddar, Tomaten, frischem Salat und hausgemachter Soße",
+  "price": 7.9,
+  "image": "/uploads/menu/crispy-chicken-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

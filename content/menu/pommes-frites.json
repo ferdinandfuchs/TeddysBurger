@@ -1,7 +1,8 @@
 {
-  "name": "Pommes Frites",
-  "description": "Knusprige Pommes mit Meersalz",
-  "price": 3.5,
+  "name": "Pommes frites",
+  "description": "",
+  "price": 3.9,
+  "image": "/uploads/menu/pommes-frites.jpg",
   "category": "sides",
   "available": true
 }

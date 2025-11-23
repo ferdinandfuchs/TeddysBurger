@@ -1,0 +1,8 @@
+{
+  "name": "Coca-Cola 0,33 l",
+  "description": "Koffeinhaltiges Erfrischungsgetränk mit Pflanzenextrakten, Zucker, mit Kohlensäure",
+  "price": 3.25,
+  "image": "/uploads/menu/coca-cola.jpg",
+  "category": "drinks",
+  "available": true
+}

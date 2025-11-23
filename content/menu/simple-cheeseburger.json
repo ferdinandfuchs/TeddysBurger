@@ -1,0 +1,8 @@
+{
+  "name": "Simple Cheeseburger",
+  "description": "mit Rindfleisch-Patty, frischen Zwiebeln, Ketchup, Senf, Tomaten und Zwiebeln",
+  "price": 7.5,
+  "image": "/uploads/menu/simple-cheeseburger.jpg",
+  "category": "burgers",
+  "available": true
+}

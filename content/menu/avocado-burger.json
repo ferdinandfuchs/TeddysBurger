@@ -1,0 +1,8 @@
+{
+  "name": "Avocado Burger",
+  "description": "mit Rindfleisch-Patty, frischer Avocado, Cheddar, Salat und frischen Zwiebeln",
+  "price": 8.9,
+  "image": "/uploads/menu/avocado-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

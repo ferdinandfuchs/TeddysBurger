@@ -1,0 +1,8 @@
+{
+  "name": "Wings",
+  "description": "mit Pommes frites, Soße und in einer Größe deiner Wahl",
+  "price": 8.5,
+  "image": "/uploads/menu/wings.jpg",
+  "category": "fingerfood",
+  "available": true
+}

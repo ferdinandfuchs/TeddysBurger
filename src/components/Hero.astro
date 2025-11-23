@@ -3,6 +3,7 @@ interface Props {
   title?: string;
   subtitle?: string;
   backgroundImage?: string;
+  backgroundVideo?: string;
   buttonText?: string;
 }
 
@@ -10,6 +11,7 @@ const {
   title = "Teddy's Burger",
   subtitle = "Die besten Burger der Stadt",
   backgroundImage,
+  backgroundVideo,
   buttonText = "Zur Speisekarte",
 } = Astro.props;
 ---
@@ -18,8 +20,21 @@ const {
   id="hero"
   class="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center"
 >
-  <!-- Background Image -->
-  {backgroundImage ? (
+  <!-- Background Video or Image -->
+  {backgroundVideo ? (
+    <div class="absolute inset-0 overflow-hidden">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+  ) : backgroundImage ? (
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat"
       style={`background-image: url('${backgroundImage}')`}

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import client from '../../tina/__generated__/client';
+
+// Fetch site settings for footer
+let siteSettings: any = null;
+
+try {
+  const settingsResponse = await client.queries.siteSettings({ relativePath: 'index.json' });
+  siteSettings = settingsResponse.data.siteSettings;
+} catch (e) {
+  console.warn('Could not fetch site settings:', e);
+}
+---
+
+<BaseLayout title="Impressum" description="Impressum von Teddy's Burger">
+  <main class="container mx-auto px-4 py-16 md:py-24">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-accent mb-8">Impressum</h1>
+
+    <div class="prose prose-invert max-w-none space-y-8">
+      <!-- Impressum Info -->
+      <section>
+        <p class="text-foreground/80">
+          Tedros Mehari<br />
+          Teddys Burger Leinfelden-Echterdingen<br />
+          Bahnhofstraße 3<br />
+          70771 Leinfelden-Echterdingen
+        </p>
+      </section>
+
+      <!-- Kontakt -->
+      <section>
+        <h2 class="font-heading text-2xl font-semibold text-foreground mb-4">Kontakt</h2>
+        <p class="text-foreground/80">
+          Telefon: +491711611800<br />
+          E-Mail: info@teddys-burger-stuttgart.de
+        </p>
+      </section>
+
+      <!-- Verbraucherstreitbeilegung -->
+      <section>
+        <h2 class="font-heading text-2xl font-semibold text-foreground mb-4">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+        <p class="text-foreground/80">
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </section>
+
+      <!-- Quelle -->
+      <section class="mt-8">
+        <p class="text-foreground/60 text-sm">
+          Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">eRecht24</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <Footer
+    restaurantName={siteSettings?.name || "Teddy's Burger"}
+    logoUrl="/uploads/logo.png"
+    phone={siteSettings?.phone}
+    email={siteSettings?.email}
+    address={siteSettings?.address}
+    socialLinks={siteSettings?.socialLinks}
+  />
+</BaseLayout>

@@ -24,5 +24,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# test output
+# test outputs
 test-results/
+
+Zusammenfassung.md

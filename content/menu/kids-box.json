@@ -1,0 +1,8 @@
+{
+  "name": "Kids Box",
+  "description": "mit 5 Chicken Nuggets und Capri-Sun, serviert mit Pommes frites",
+  "price": 5.9,
+  "image": "",
+  "category": "kids",
+  "available": true
+}

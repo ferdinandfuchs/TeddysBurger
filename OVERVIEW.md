@@ -25,11 +25,11 @@
 ## content/
 
 - `posts/` - Content storage for Tina CMS
-- `gallery/` - Gallery images collection
-- `location/` - Location information
-- `menu/` - Menu items
-- `pages/` - Page content (hero)
-- `settings/` - Site settings
+- `gallery/` - Gallery images collection (5 images)
+- `location/` - Location information (main.json)
+- `menu/` - Menu items (27 items: 11 burgers, 3 kids menus, 1 fingerfood, 4 sides, 8 drinks)
+- `pages/` - Page content (home.json with hero)
+- `settings/` - Site settings (index.json)
 
 ## public/
 
@@ -49,7 +49,7 @@
 - `Header.astro` - Sticky header with logo, navigation links, mobile menu
 - `Footer.astro` - Footer with contact info, social links, legal links, copyright
 - `Hero.astro` - Full-width hero section with background image, title, subtitle, CTA button
-- `Menu.astro` - Menu section with category filtering (Alle/Burger/Beilagen/Getränke)
+- `Menu.astro` - Menu section with category filtering (Alle/Burger/Kids/Fingerfood/Beilagen/Getränke)
 - `MenuItem.astro` - Individual menu item card with name, price, description, image
 - `Location.astro` - Location section with address, phone (clickable), opening hours, optional image
 - `Gallery.astro` - Image gallery grid with captions and hover overlay
@@ -58,6 +58,8 @@
 ## src/pages/
 
 - `index.astro` - Homepage fetching all content from Tina CMS (hero, menu, location, gallery, contact)
+- `impressum.astro` - Legal Impressum page with placeholder content (§ 5 TMG compliance)
+- `datenschutz.astro` - Privacy policy page with GDPR-compliant placeholder content
 
 ## .vscode/
 

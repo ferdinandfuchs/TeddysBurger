@@ -1,0 +1,8 @@
+{
+  "name": "Falafel Burger",
+  "description": "mit Falafel, Tomaten, Gewürzgurken, frischen Zwiebeln und hausgemachter Soße",
+  "price": 8.2,
+  "image": "/uploads/menu/falafel-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

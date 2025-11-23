@@ -1,0 +1,8 @@
+{
+  "name": "Capri-Sun Orange 0,2 l",
+  "description": "Erfrischungsgetränk mit Orangengeschmack, Zucker, ohne Kohlensäure",
+  "price": 2.5,
+  "image": "/uploads/menu/capri-sun-orange.jpg",
+  "category": "drinks",
+  "available": true
+}

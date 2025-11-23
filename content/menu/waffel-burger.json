@@ -1,0 +1,8 @@
+{
+  "name": "Waffel Burger",
+  "description": "mit belgischer Waffel, knusprigem Hähnchen, Cheddar, Salat und hausgemachter Soße",
+  "price": 7.9,
+  "image": "/uploads/menu/waffel-burger.jpg",
+  "category": "burgers",
+  "available": true
+}

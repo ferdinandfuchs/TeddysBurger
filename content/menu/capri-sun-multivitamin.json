@@ -1,0 +1,8 @@
+{
+  "name": "Capri-Sun Multivitamin 0,2 l",
+  "description": "Mehrfrucht-Erfrischungsgetränk aus Wasser, Zucker, Fruchtsaft (Orange, Apfel, Ananas, Maracuja), ohne Kohlensäure",
+  "price": 2.5,
+  "image": "/uploads/menu/capri-sun-multivitamin.jpg",
+  "category": "drinks",
+  "available": true
+}

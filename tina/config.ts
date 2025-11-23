@@ -26,24 +26,159 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: 'post',
-        label: 'Posts',
-        path: 'content/posts',
+        name: 'siteSettings',
+        label: 'Site Settings',
+        path: 'content/settings',
+        format: 'json',
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+          global: true,
+        },
         fields: [
           {
             type: 'string',
-            name: 'title',
-            label: 'Title',
+            name: 'name',
+            label: 'Restaurant Name',
+            required: true,
+          },
+          {
+            type: 'image',
+            name: 'logo',
+            label: 'Logo',
+          },
+          {
+            type: 'string',
+            name: 'tagline',
+            label: 'Tagline',
+          },
+          {
+            type: 'string',
+            name: 'phone',
+            label: 'Phone Number',
+          },
+          {
+            type: 'string',
+            name: 'email',
+            label: 'Email',
+          },
+          {
+            type: 'string',
+            name: 'address',
+            label: 'Address',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'object',
+            name: 'openingHours',
+            label: 'Opening Hours',
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item?.day || 'New Opening Hours',
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'day',
+                label: 'Day',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'hours',
+                label: 'Hours',
+                required: true,
+              },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'socialLinks',
+            label: 'Social Links',
+            fields: [
+              {
+                type: 'string',
+                name: 'instagram',
+                label: 'Instagram URL',
+              },
+              {
+                type: 'string',
+                name: 'facebook',
+                label: 'Facebook URL',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'menuItem',
+        label: 'Menu Items',
+        path: 'content/menu',
+        format: 'json',
+        ui: {
+          filename: {
+            readonly: true,
+            slugify: (values) => {
+              return values?.name?.toLowerCase().replace(/\s+/g, '-') || 'new-item';
+            },
+          },
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'name',
+            label: 'Name',
             isTitle: true,
             required: true,
           },
           {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body',
-            isBody: true,
+            type: 'string',
+            name: 'description',
+            label: 'Description',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'number',
+            name: 'price',
+            label: 'Price (€)',
+            required: true,
+          },
+          {
+            type: 'image',
+            name: 'image',
+            label: 'Image',
+          },
+          {
+            type: 'string',
+            name: 'category',
+            label: 'Category',
+            required: true,
+            options: [
+              { value: 'burgers', label: 'Burgers' },
+              { value: 'sides', label: 'Sides' },
+              { value: 'drinks', label: 'Drinks' },
+            ],
+          },
+          {
+            type: 'boolean',
+            name: 'available',
+            label: 'Available',
+            ui: {
+              component: 'toggle',
+            },
           },
         ],
+        defaultItem: {
+          available: true,
+        },
       },
     ],
   },

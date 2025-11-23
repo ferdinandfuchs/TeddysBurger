@@ -1,0 +1,7 @@
+{
+  "name": "Classic Burger",
+  "description": "Unser klassischer Burger mit saftigem Rindfleisch",
+  "price": 8.9,
+  "category": "burgers",
+  "available": true
+}

@@ -143,6 +143,8 @@ npm run format
 
 ### Step 2.1: Create Site Settings Schema
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Define site settings collection in Tina
@@ -178,6 +180,8 @@ npm run dev
 ---
 
 ### Step 2.2: Create Menu Items Schema
+
+**Status**: ✅ Completed
 
 **Tasks**:
 
@@ -690,8 +694,8 @@ npm run preview
 
 ### Phase 2: Content Schemas
 
-- [ ] 2.1 Site settings schema
-- [ ] 2.2 Menu items schema
+- [x] 2.1 Site settings schema
+- [x] 2.2 Menu items schema
 - [ ] 2.3 Page content schema
 - [ ] 2.4 Location schema
 - [ ] 2.5 Gallery schema

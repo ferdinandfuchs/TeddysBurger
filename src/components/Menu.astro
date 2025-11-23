@@ -48,12 +48,12 @@ const sortedItems = [...items].sort((a, b) => {
 
     <!-- Category Tabs -->
     <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12">
-      {categories.map((category, index) => (
+      {categories.map((category) => (
         <button
           type="button"
           data-category={category.id}
           class={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors ${
-            index === 0
+            category.id === 'burgers'
               ? 'bg-accent text-foreground'
               : 'bg-background text-foreground/70 hover:text-foreground hover:bg-background/80'
           }`}
@@ -67,7 +67,11 @@ const sortedItems = [...items].sort((a, b) => {
     {sortedItems.length > 0 ? (
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
         {sortedItems.map((item) => (
-          <div data-menu-item data-item-category={item.category}>
+          <div
+            data-menu-item
+            data-item-category={item.category}
+            style={item.category !== 'burgers' ? 'display: none;' : ''}
+          >
             <MenuItem
               name={item.name}
               description={item.description}

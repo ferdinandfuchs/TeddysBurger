@@ -1,6 +1,7 @@
 ---
 interface Props {
   restaurantName?: string;
+  logoUrl?: string;
   phone?: string;
   email?: string;
   address?: string;
@@ -12,6 +13,7 @@ interface Props {
 
 const {
   restaurantName = "Teddy's Burger",
+  logoUrl,
   phone,
   email,
   address,
@@ -23,6 +25,13 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-background-alt border-t border-foreground/10">
   <div class="container mx-auto px-4 py-12">
+    <!-- Logo -->
+    {logoUrl && (
+      <div class="flex justify-center mb-8">
+        <img src={logoUrl} alt={restaurantName} class="h-24 md:h-32 w-auto" />
+      </div>
+    )}
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Contact Info -->
       <div>

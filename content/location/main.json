@@ -1,7 +1,7 @@
 {
   "name": "Teddy's Burger",
-  "address": "Musterstraße 123\n12345 Berlin\nDeutschland",
-  "phone": "+49 30 1234567",
+  "address": "Bahnhofstraße 3, 70771 Leinfelden-Echterdingen",
+  "phone": "0711 340 89110",
   "openingHours": [
     {
       "day": "Montag - Freitag",

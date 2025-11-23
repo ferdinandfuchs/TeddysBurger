@@ -1,0 +1,7 @@
+{
+  "name": "Pommes Frites",
+  "description": "Knusprige Pommes mit Meersalz",
+  "price": 3.5,
+  "category": "sides",
+  "available": true
+}

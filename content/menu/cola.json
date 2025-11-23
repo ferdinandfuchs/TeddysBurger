@@ -1,0 +1,7 @@
+{
+  "name": "Cola",
+  "description": "Erfrischende Cola, 0,4l",
+  "price": 2.9,
+  "category": "drinks",
+  "available": true
+}

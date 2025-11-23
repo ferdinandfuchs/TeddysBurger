@@ -1,0 +1,7 @@
+{
+  "name": "Veggie Burger",
+  "description": "Hausgemachter Gemüse-Patty mit Avocado, Tomaten und Joghurt-Dressing",
+  "price": 10.5,
+  "category": "burgers",
+  "available": true
+}

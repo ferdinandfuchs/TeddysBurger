@@ -28,7 +28,7 @@
 - `gallery/` - Gallery images collection
 - `location/` - Location information
 - `menu/` - Menu items
-- `pages/` - Page content (hero, about)
+- `pages/` - Page content (hero)
 - `settings/` - Site settings
 
 ## public/
@@ -49,7 +49,6 @@
 - `Header.astro` - Sticky header with logo, navigation links, mobile menu
 - `Footer.astro` - Footer with contact info, social links, legal links, copyright
 - `Hero.astro` - Full-width hero section with background image, title, subtitle, CTA button
-- `About.astro` - About section with title, rich-text content, optional image
 - `Menu.astro` - Menu section with category filtering (Alle/Burger/Beilagen/Getränke)
 - `MenuItem.astro` - Individual menu item card with name, price, description, image
 - `Location.astro` - Location section with address, phone (clickable), opening hours, optional image
@@ -58,7 +57,7 @@
 
 ## src/pages/
 
-- `index.astro` - Homepage using BaseLayout with dark theme test content
+- `index.astro` - Homepage fetching all content from Tina CMS (hero, menu, location, gallery, contact)
 
 ## .vscode/
 

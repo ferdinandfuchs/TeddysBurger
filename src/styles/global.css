@@ -14,9 +14,9 @@
   --color-background: #000000;
   --color-background-alt: #111111;
   --color-foreground: #ffffff;
-  --color-accent: #ab3f1b;
-  --color-accent-hover: #c4491f;
-  --color-accent-dark: #8a3216;
+  --color-accent: #E8A33C;
+  --color-accent-hover: #F0B54D;
+  --color-accent-dark: #D4941F;
 
   /* Font families - will be configured with Google Fonts in Step 1.4 */
   --font-heading: 'Oswald', sans-serif;

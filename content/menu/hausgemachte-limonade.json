@@ -1,0 +1,7 @@
+{
+  "name": "Hausgemachte Limonade",
+  "description": "Frisch gepresste Zitronenlimonade mit Minze",
+  "price": 3.9,
+  "category": "drinks",
+  "available": true
+}

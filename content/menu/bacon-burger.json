@@ -1,0 +1,7 @@
+{
+  "name": "Bacon Burger",
+  "description": "Knuspriger Bacon, Rindfleisch-Patty, Cheddar und BBQ-Sauce",
+  "price": 11.5,
+  "category": "burgers",
+  "available": true
+}

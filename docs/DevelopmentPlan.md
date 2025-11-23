@@ -525,6 +525,8 @@ npm run dev
 
 ### Step 5.1: Assemble Index Page
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Import all components
@@ -532,9 +534,14 @@ npm run dev
 3. Pass data to components
 4. Proper section ordering
 
-**Files to modify**:
+**Files modified**:
 
 - `src/pages/index.astro`
+
+**Notes**:
+
+- About section was removed due to TinaCMS rich-text caching issues
+- Page now displays: Hero, Menu, Location, Gallery, Contact sections
 
 **Test**:
 
@@ -556,10 +563,9 @@ npm run dev
 
 1. Add placeholder menu items (5-10 items per category)
 2. Add hero content
-3. Add about text
-4. Add location details
-5. Add gallery images
-6. Add site settings
+3. Add location details
+4. Add gallery images
+5. Add site settings
 
 **Test**:
 
@@ -743,7 +749,7 @@ npm run preview
 ### Phase 4: Page Sections
 
 - [x] 4.1 Hero section
-- [x] 4.2 About section
+- [x] ~~4.2 About section~~ (removed)
 - [x] 4.3 Menu section
 - [x] 4.4 Location section
 - [x] 4.5 Gallery section
@@ -751,7 +757,7 @@ npm run preview
 
 ### Phase 5: Assembly
 
-- [ ] 5.1 Index page assembled
+- [x] 5.1 Index page assembled
 
 ### Phase 6: Content
 

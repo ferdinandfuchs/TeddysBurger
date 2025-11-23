@@ -221,29 +221,6 @@ export default defineConfig({
               },
             ],
           },
-          {
-            type: 'object',
-            name: 'about',
-            label: 'About Section',
-            fields: [
-              {
-                type: 'string',
-                name: 'title',
-                label: 'Title',
-                required: true,
-              },
-              {
-                type: 'rich-text',
-                name: 'content',
-                label: 'Content',
-              },
-              {
-                type: 'image',
-                name: 'image',
-                label: 'Image',
-              },
-            ],
-          },
         ],
       },
       {

@@ -1,9 +1,9 @@
 {
   "name": "Teddy's Burger",
-  "tagline": "Die besten Burger der Stadt",
-  "phone": "+49 123 456789",
-  "email": "info@teddysburger.de",
-  "address": "Musterstraße 1\n12345 Berlin",
+  "tagline": "Where every bite is a hug",
+  "phone": "0711 340 89110",
+  "email": "info@deineEmail.de",
+  "address": "Bahnhofstraße 3, 70771 Leinfelden-Echterdingen",
   "openingHours": [
     {
       "day": "Montag - Freitag",

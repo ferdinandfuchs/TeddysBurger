@@ -14,6 +14,9 @@ const {
   backgroundVideo,
   buttonText = "Zur Speisekarte",
 } = Astro.props;
+
+// Generate mobile video path from desktop video
+const mobileVideo = backgroundVideo?.replace('.mp4', '-mobile.mp4');
 ---
 
 <section
@@ -24,11 +27,16 @@ const {
   {backgroundVideo ? (
     <div class="absolute inset-0 overflow-hidden">
       <video
+        id="hero-video"
         autoplay
         muted
         loop
         playsinline
+        webkit-playsinline
+        disablepictureinpicture
         class="absolute inset-0 w-full h-full object-cover"
+        data-src-desktop={backgroundVideo}
+        data-src-mobile={mobileVideo}
       >
         <source src={backgroundVideo} type="video/mp4" />
       </video>
@@ -69,3 +77,40 @@ const {
     )}
   </div>
 </section>
+
+{backgroundVideo && (
+  <script>
+    // Responsive video loading and autoplay
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('hero-video') as HTMLVideoElement;
+      if (video) {
+        // Select appropriate video source based on screen width
+        const isMobile = window.innerWidth < 768;
+        const desktopSrc = video.dataset.srcDesktop;
+        const mobileSrc = video.dataset.srcMobile;
+        const selectedSrc = isMobile && mobileSrc ? mobileSrc : desktopSrc;
+
+        if (selectedSrc) {
+          const source = video.querySelector('source');
+          if (source && source.src !== selectedSrc) {
+            source.src = selectedSrc;
+            video.load();
+          }
+        }
+
+        // Force autoplay
+        video.muted = true;
+        video.play().catch(() => {
+          // If autoplay fails, try playing on first user interaction
+          const playOnInteraction = () => {
+            video.play();
+            document.removeEventListener('touchstart', playOnInteraction);
+            document.removeEventListener('click', playOnInteraction);
+          };
+          document.addEventListener('touchstart', playOnInteraction, { once: true });
+          document.addEventListener('click', playOnInteraction, { once: true });
+        });
+      }
+    });
+  </script>
+)}

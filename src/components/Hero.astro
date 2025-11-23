@@ -1,0 +1,56 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  buttonText?: string;
+}
+
+const {
+  title = "Teddy's Burger",
+  subtitle = "Die besten Burger der Stadt",
+  backgroundImage,
+  buttonText = "Zur Speisekarte",
+} = Astro.props;
+---
+
+<section
+  id="hero"
+  class="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center"
+>
+  <!-- Background Image -->
+  {backgroundImage ? (
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={`background-image: url('${backgroundImage}')`}
+    >
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+  ) : (
+    <div class="absolute inset-0 bg-background-alt">
+      <div class="absolute inset-0 bg-gradient-to-b from-background/50 to-background"></div>
+    </div>
+  )}
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4 text-center">
+    <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6">
+      {title}
+    </h1>
+
+    {subtitle && (
+      <p class="text-xl md:text-2xl lg:text-3xl mb-8 md:mb-10 text-foreground/90 max-w-2xl mx-auto">
+        {subtitle}
+      </p>
+    )}
+
+    {buttonText && (
+      <a
+        href="#menu"
+        class="inline-block bg-accent hover:bg-accent-hover text-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+      >
+        {buttonText}
+      </a>
+    )}
+  </div>
+</section>

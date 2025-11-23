@@ -25,6 +25,11 @@
 ## content/
 
 - `posts/` - Content storage for Tina CMS
+- `gallery/` - Gallery images collection
+- `location/` - Location information
+- `menu/` - Menu items
+- `pages/` - Page content (hero, about)
+- `settings/` - Site settings
 
 ## public/
 
@@ -35,9 +40,25 @@
 
 - `global.css` - Global styles with Tailwind and custom theme colors
 
+## src/layouts/
+
+- `BaseLayout.astro` - Main layout with SEO meta tags, global styles, dark theme
+
+## src/components/
+
+- `Header.astro` - Sticky header with logo, navigation links, mobile menu
+- `Footer.astro` - Footer with contact info, social links, legal links, copyright
+- `Hero.astro` - Full-width hero section with background image, title, subtitle, CTA button
+- `About.astro` - About section with title, rich-text content, optional image
+- `Menu.astro` - Menu section with category filtering (Alle/Burger/Beilagen/Getränke)
+- `MenuItem.astro` - Individual menu item card with name, price, description, image
+- `Location.astro` - Location section with address, phone (clickable), opening hours, optional image
+- `Gallery.astro` - Image gallery grid with captions and hover overlay
+- `Contact.astro` - Contact section with phone, email, address, and social links
+
 ## src/pages/
 
-- `index.astro` - Homepage with dark theme test content
+- `index.astro` - Homepage using BaseLayout with dark theme test content
 
 ## .vscode/
 

@@ -1,0 +1,20 @@
+{
+  "name": "Teddy's Burger",
+  "address": "Musterstraße 123\n12345 Berlin\nDeutschland",
+  "phone": "+49 30 1234567",
+  "openingHours": [
+    {
+      "day": "Montag - Freitag",
+      "hours": "11:00 - 22:00"
+    },
+    {
+      "day": "Samstag",
+      "hours": "12:00 - 23:00"
+    },
+    {
+      "day": "Sonntag",
+      "hours": "12:00 - 21:00"
+    }
+  ],
+  "image": ""
+}

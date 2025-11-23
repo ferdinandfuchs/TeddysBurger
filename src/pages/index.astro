@@ -1,31 +1,175 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Menu from '../components/Menu.astro';
+import Location from '../components/Location.astro';
+import Gallery from '../components/Gallery.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import client from '../../tina/__generated__/client';
+
+// Helper function to convert Tina rich-text to HTML
+function richTextToHtml(node: any): string {
+  if (!node) return '';
+
+  if (node.type === 'root') {
+    return node.children?.map(richTextToHtml).join('') || '';
+  }
+
+  if (node.type === 'text') {
+    let text = node.text || '';
+    if (node.bold) text = `<strong>${text}</strong>`;
+    if (node.italic) text = `<em>${text}</em>`;
+    return text;
+  }
+
+  if (node.type === 'p') {
+    const content = node.children?.map(richTextToHtml).join('') || '';
+    return `<p>${content}</p>`;
+  }
+
+  if (node.type === 'h1' || node.type === 'h2' || node.type === 'h3') {
+    const content = node.children?.map(richTextToHtml).join('') || '';
+    return `<${node.type}>${content}</${node.type}>`;
+  }
+
+  if (node.type === 'ul' || node.type === 'ol') {
+    const content = node.children?.map(richTextToHtml).join('') || '';
+    return `<${node.type}>${content}</${node.type}>`;
+  }
+
+  if (node.type === 'li') {
+    const content = node.children?.map(richTextToHtml).join('') || '';
+    return `<li>${content}</li>`;
+  }
+
+  if (node.type === 'a') {
+    const content = node.children?.map(richTextToHtml).join('') || '';
+    return `<a href="${node.url || ''}">${content}</a>`;
+  }
+
+  // Fallback for unknown types
+  if (node.children) {
+    return node.children.map(richTextToHtml).join('');
+  }
+
+  return '';
+}
+
+// Fetch all content from Tina CMS
+let siteSettings: any = null;
+let pageContent: any = null;
+let menuItems: any[] = [];
+let locationData: any = null;
+let galleryImages: any[] = [];
+
+try {
+  // Fetch site settings
+  const settingsResponse = await client.queries.siteSettings({ relativePath: 'index.json' });
+  siteSettings = settingsResponse.data.siteSettings;
+} catch (e) {
+  console.warn('Could not fetch site settings:', e);
+}
+
+try {
+  // Fetch page content (hero and about)
+  const pageResponse = await client.queries.pageContent({ relativePath: 'home.json' });
+  pageContent = pageResponse.data.pageContent;
+} catch (e) {
+  console.warn('Could not fetch page content:', e);
+}
+
+try {
+  // Fetch all menu items
+  const menuResponse = await client.queries.menuItemConnection();
+  menuItems = menuResponse.data.menuItemConnection.edges?.map((edge: any) => edge.node) || [];
+} catch (e) {
+  console.warn('Could not fetch menu items:', e);
+}
+
+try {
+  // Fetch location
+  const locationResponse = await client.queries.location({ relativePath: 'main.json' });
+  locationData = locationResponse.data.location;
+} catch (e) {
+  console.warn('Could not fetch location:', e);
+}
+
+try {
+  // Fetch gallery images
+  const galleryResponse = await client.queries.galleryImageConnection();
+  galleryImages = galleryResponse.data.galleryImageConnection.edges?.map((edge: any) => edge.node) || [];
+} catch (e) {
+  console.warn('Could not fetch gallery images:', e);
+}
+
+// Transform menu items to component format
+const formattedMenuItems = menuItems.map((item: any) => ({
+  name: item.name,
+  description: item.description,
+  price: item.price,
+  image: item.image,
+  category: item.category as 'burgers' | 'sides' | 'drinks',
+  available: item.available ?? true,
+}));
+
+// Transform gallery images to component format
+const formattedGalleryImages = galleryImages.map((item: any) => ({
+  image: item.image,
+  caption: item.caption,
+  order: item.order ?? 0,
+}));
+
+// Convert about content from rich-text to HTML
+const aboutHtml = pageContent?.about?.content
+  ? richTextToHtml(pageContent.about.content)
+  : '';
 ---
 
-<html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Teddy's Burger</title>
-  </head>
-  <body class="min-h-screen">
-    <main class="container mx-auto px-4 py-16">
-      <h1 class="text-5xl font-bold mb-4">Teddy's Burger</h1>
-      <p class="text-xl mb-8">Die besten Burger der Stadt</p>
-      <button
-        class="bg-accent hover:bg-accent-hover text-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
-      >
-        Zur Speisekarte
-      </button>
+<BaseLayout>
+  <main>
+    <Hero
+      title={pageContent?.hero?.title || "Teddy's Burger"}
+      subtitle={pageContent?.hero?.subtitle}
+      backgroundImage={pageContent?.hero?.backgroundImage}
+      buttonText={pageContent?.hero?.buttonText || "Zur Speisekarte"}
+    />
 
-      <div class="mt-12 p-6 bg-background-alt rounded-lg">
-        <h2 class="text-2xl mb-4">Theme Test</h2>
-        <p class="mb-2">Background: <span class="text-accent">Black (#000000)</span></p>
-        <p class="mb-2">Alt Background: <span class="text-accent">Dark Grey (#111111)</span></p>
-        <p class="mb-2">Accent Color: <span class="text-accent">Burnt Orange (#ab3f1b)</span></p>
-      </div>
-    </main>
-  </body>
-</html>
+    <About
+      title={pageContent?.about?.title || "Über uns"}
+      content={aboutHtml}
+      image={pageContent?.about?.image}
+    />
+
+    <Menu items={formattedMenuItems} />
+
+    <Location
+      name={locationData?.name || "Standort"}
+      address={locationData?.address}
+      phone={locationData?.phone}
+      openingHours={locationData?.openingHours || []}
+      image={locationData?.image}
+    />
+
+    <Gallery
+      title="Galerie"
+      images={formattedGalleryImages}
+    />
+
+    <Contact
+      phone={siteSettings?.phone}
+      email={siteSettings?.email}
+      address={siteSettings?.address}
+      socialLinks={siteSettings?.socialLinks}
+    />
+  </main>
+
+  <Footer
+    restaurantName={siteSettings?.name || "Teddy's Burger"}
+    phone={siteSettings?.phone}
+    email={siteSettings?.email}
+    address={siteSettings?.address}
+    socialLinks={siteSettings?.socialLinks}
+  />
+</BaseLayout>

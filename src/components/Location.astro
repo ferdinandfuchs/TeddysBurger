@@ -1,0 +1,98 @@
+---
+interface OpeningHours {
+  day: string;
+  hours: string;
+}
+
+interface Props {
+  name?: string;
+  address?: string;
+  phone?: string;
+  openingHours?: OpeningHours[];
+  image?: string;
+}
+
+const {
+  name = "Standort",
+  address,
+  phone,
+  openingHours = [],
+  image,
+} = Astro.props;
+
+// Format phone number for tel: link (remove spaces and special chars)
+const phoneLink = phone?.replace(/[\s\-\(\)]/g, '') || '';
+---
+
+<section id="location" class="py-16 md:py-24 bg-background-alt">
+  <div class="container mx-auto px-4">
+    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-8 md:mb-12 text-center">
+      {name}
+    </h2>
+
+    <div class={`grid gap-8 md:gap-12 ${image ? 'md:grid-cols-2' : 'max-w-2xl mx-auto'}`}>
+      <!-- Location Info -->
+      <div class="space-y-6">
+        <!-- Address -->
+        {address && (
+          <div>
+            <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+              Adresse
+            </h3>
+            <p class="text-foreground/90 whitespace-pre-line">
+              {address}
+            </p>
+          </div>
+        )}
+
+        <!-- Phone -->
+        {phone && (
+          <div>
+            <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+              Telefon
+            </h3>
+            <a
+              href={`tel:${phoneLink}`}
+              class="text-accent hover:text-accent-hover transition-colors text-lg"
+            >
+              {phone}
+            </a>
+          </div>
+        )}
+
+        <!-- Opening Hours -->
+        {openingHours.length > 0 && (
+          <div>
+            <h3 class="font-heading text-xl font-semibold text-foreground mb-3">
+              Öffnungszeiten
+            </h3>
+            <ul class="space-y-2">
+              {openingHours.map((item) => (
+                <li class="flex justify-between text-foreground/90">
+                  <span class="font-medium">{item.day}</span>
+                  <span>{item.hours}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <!-- Location Image -->
+      {image && (
+        <div class="relative">
+          <div class="aspect-video md:aspect-square overflow-hidden rounded-lg">
+            <img
+              src={image}
+              alt={name}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <!-- Decorative accent border -->
+          <div class="absolute -bottom-3 -left-3 w-full h-full border-2 border-accent rounded-lg -z-10"></div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

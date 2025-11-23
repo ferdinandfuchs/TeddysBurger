@@ -214,6 +214,8 @@ npm run dev
 
 ### Step 2.3: Create Page Content Schema
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Define page content for Hero and About sections
@@ -231,6 +233,8 @@ npm run dev
 ---
 
 ### Step 2.4: Create Location Schema
+
+**Status**: ✅ Completed
 
 **Tasks**:
 
@@ -250,10 +254,22 @@ npm run dev
 
 ### Step 2.5: Create Gallery Schema
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Define gallery images collection
 2. Fields: image, caption, order
+
+**Schema fields**:
+
+```typescript
+{
+  image: image (required),
+  caption: string (required, isTitle),
+  order: number (Display Order - lower numbers appear first)
+}
+```
 
 **Test**:
 
@@ -269,6 +285,8 @@ npm run dev
 ## Phase 3: Layout and Components
 
 ### Step 3.1: Create Base Layout
+
+**Status**: ✅ Completed
 
 **Tasks**:
 
@@ -292,6 +310,8 @@ npm run dev
 ---
 
 ### Step 3.2: Create Header/Navigation Component
+
+**Status**: ✅ Completed
 
 **Tasks**:
 
@@ -317,6 +337,8 @@ npm run dev
 
 ### Step 3.3: Create Footer Component
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Contact information display
@@ -324,7 +346,7 @@ npm run dev
 3. Legal links (Impressum, Datenschutz)
 4. Copyright notice
 
-**Files to create**:
+**Files created**:
 
 - `src/components/Footer.astro`
 
@@ -343,6 +365,8 @@ npm run dev
 
 ### Step 4.1: Create Hero Section
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Full-width hero with background image
@@ -350,7 +374,7 @@ npm run dev
 3. Call-to-action button (scroll to menu)
 4. Dark overlay for text readability
 
-**Files to create**:
+**Files created**:
 
 - `src/components/Hero.astro`
 
@@ -368,13 +392,15 @@ npm run dev
 
 ### Step 4.2: Create About Section
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Restaurant story/philosophy
 2. Typography styling (Oswald headings, Lato body)
 3. Optional image
 
-**Files to create**:
+**Files created**:
 
 - `src/components/About.astro`
 
@@ -391,6 +417,8 @@ npm run dev
 
 ### Step 4.3: Create Menu Section
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Category tabs/filters (Burgers, Sides, Drinks)
@@ -398,7 +426,7 @@ npm run dev
 3. Grid layout for items
 4. Handle "not available" items
 
-**Files to create**:
+**Files created**:
 
 - `src/components/Menu.astro`
 - `src/components/MenuItem.astro`
@@ -418,6 +446,8 @@ npm run dev
 
 ### Step 4.4: Create Location Section
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Address display
@@ -425,7 +455,7 @@ npm run dev
 3. Phone number (clickable tel: link)
 4. Location image or map placeholder
 
-**Files to create**:
+**Files created**:
 
 - `src/components/Location.astro`
 
@@ -442,13 +472,15 @@ npm run dev
 
 ### Step 4.5: Create Gallery Section
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Image grid layout
 2. Lightbox functionality (optional, keep simple)
 3. Responsive grid
 
-**Files to create**:
+**Files created**:
 
 - `src/components/Gallery.astro`
 
@@ -465,6 +497,8 @@ npm run dev
 
 ### Step 4.6: Create Contact Section
 
+**Status**: ✅ Completed
+
 **Tasks**:
 
 1. Display contact information
@@ -472,7 +506,7 @@ npm run dev
 3. Email (clickable mailto:)
 4. Social media links
 
-**Files to create**:
+**Files created**:
 
 - `src/components/Contact.astro`
 
@@ -696,24 +730,24 @@ npm run preview
 
 - [x] 2.1 Site settings schema
 - [x] 2.2 Menu items schema
-- [ ] 2.3 Page content schema
-- [ ] 2.4 Location schema
-- [ ] 2.5 Gallery schema
+- [x] 2.3 Page content schema
+- [x] 2.4 Location schema
+- [x] 2.5 Gallery schema
 
 ### Phase 3: Layout & Components
 
-- [ ] 3.1 Base layout
-- [ ] 3.2 Header/Navigation
-- [ ] 3.3 Footer
+- [x] 3.1 Base layout
+- [x] 3.2 Header/Navigation
+- [x] 3.3 Footer
 
 ### Phase 4: Page Sections
 
-- [ ] 4.1 Hero section
-- [ ] 4.2 About section
-- [ ] 4.3 Menu section
-- [ ] 4.4 Location section
-- [ ] 4.5 Gallery section
-- [ ] 4.6 Contact section
+- [x] 4.1 Hero section
+- [x] 4.2 About section
+- [x] 4.3 Menu section
+- [x] 4.4 Location section
+- [x] 4.5 Gallery section
+- [x] 4.6 Contact section
 
 ### Phase 5: Assembly
 

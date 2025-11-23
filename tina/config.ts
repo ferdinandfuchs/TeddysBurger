@@ -180,6 +180,174 @@ export default defineConfig({
           available: true,
         },
       },
+      {
+        name: 'pageContent',
+        label: 'Page Content',
+        path: 'content/pages',
+        format: 'json',
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+          global: true,
+        },
+        fields: [
+          {
+            type: 'object',
+            name: 'hero',
+            label: 'Hero Section',
+            fields: [
+              {
+                type: 'string',
+                name: 'title',
+                label: 'Title',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'subtitle',
+                label: 'Subtitle',
+              },
+              {
+                type: 'image',
+                name: 'backgroundImage',
+                label: 'Background Image',
+              },
+              {
+                type: 'string',
+                name: 'buttonText',
+                label: 'Button Text',
+              },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'about',
+            label: 'About Section',
+            fields: [
+              {
+                type: 'string',
+                name: 'title',
+                label: 'Title',
+                required: true,
+              },
+              {
+                type: 'rich-text',
+                name: 'content',
+                label: 'Content',
+              },
+              {
+                type: 'image',
+                name: 'image',
+                label: 'Image',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'location',
+        label: 'Location',
+        path: 'content/location',
+        format: 'json',
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+          global: true,
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'name',
+            label: 'Location Name',
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'address',
+            label: 'Address',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'string',
+            name: 'phone',
+            label: 'Phone Number',
+          },
+          {
+            type: 'object',
+            name: 'openingHours',
+            label: 'Opening Hours',
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item?.day || 'New Day',
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'day',
+                label: 'Day',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'hours',
+                label: 'Hours',
+                required: true,
+              },
+            ],
+          },
+          {
+            type: 'image',
+            name: 'image',
+            label: 'Location Image',
+          },
+        ],
+      },
+      {
+        name: 'galleryImage',
+        label: 'Gallery',
+        path: 'content/gallery',
+        format: 'json',
+        ui: {
+          filename: {
+            readonly: true,
+            slugify: (values) => {
+              return values?.caption?.toLowerCase().replace(/\s+/g, '-') || `gallery-${Date.now()}`;
+            },
+          },
+        },
+        fields: [
+          {
+            type: 'image',
+            name: 'image',
+            label: 'Image',
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'caption',
+            label: 'Caption',
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: 'number',
+            name: 'order',
+            label: 'Display Order',
+            description: 'Lower numbers appear first',
+          },
+        ],
+        defaultItem: {
+          order: 0,
+        },
+      },
     ],
   },
 });

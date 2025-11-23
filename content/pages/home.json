@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "title": "Teddy's Burger",
+    "subtitle": "Die besten Burger der Stadt",
+    "backgroundImage": "",
+    "buttonText": "Zur Speisekarte"
+  },
+  "about": {
+    "title": "Unsere Geschichte",
+    "content": {
+      "type": "root",
+      "children": [
+        {
+          "type": "p",
+          "children": [
+            {
+              "type": "text",
+              "text": "Bei Teddy's Burger dreht sich alles um echten Geschmack. Wir verwenden nur frische, regionale Zutaten und bereiten jeden Burger mit Liebe und Leidenschaft zu."
+            }
+          ]
+        }
+      ]
+    },
+    "image": ""
+  }
+}

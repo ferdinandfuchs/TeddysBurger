@@ -1,0 +1,118 @@
+---
+import MenuItem from './MenuItem.astro';
+
+interface MenuItemData {
+  name: string;
+  description?: string;
+  price: number;
+  image?: string;
+  category: 'burgers' | 'sides' | 'drinks';
+  available?: boolean;
+}
+
+interface Props {
+  title?: string;
+  items: MenuItemData[];
+}
+
+const {
+  title = "Speisekarte",
+  items = [],
+} = Astro.props;
+
+// Group items by category
+const categories = [
+  { id: 'all', label: 'Alle' },
+  { id: 'burgers', label: 'Burger' },
+  { id: 'sides', label: 'Beilagen' },
+  { id: 'drinks', label: 'Getränke' },
+];
+
+// Sort items: available first, then by name
+const sortedItems = [...items].sort((a, b) => {
+  if (a.available !== b.available) {
+    return a.available ? -1 : 1;
+  }
+  return a.name.localeCompare(b.name, 'de');
+});
+---
+
+<section id="menu" class="py-16 md:py-24 bg-background-alt">
+  <div class="container mx-auto px-4">
+    <!-- Section Title -->
+    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-accent text-center mb-8 md:mb-12">
+      {title}
+    </h2>
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12">
+      {categories.map((category, index) => (
+        <button
+          type="button"
+          data-category={category.id}
+          class={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors ${
+            index === 0
+              ? 'bg-accent text-foreground'
+              : 'bg-background text-foreground/70 hover:text-foreground hover:bg-background/80'
+          }`}
+        >
+          {category.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Menu Items Grid -->
+    {sortedItems.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        {sortedItems.map((item) => (
+          <div data-menu-item data-item-category={item.category}>
+            <MenuItem
+              name={item.name}
+              description={item.description}
+              price={item.price}
+              image={item.image}
+              available={item.available}
+            />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-foreground/70">
+        Keine Speisen verfügbar.
+      </p>
+    )}
+  </div>
+</section>
+
+<script>
+  // Category filtering functionality
+  const menuSection = document.getElementById('menu');
+  if (menuSection) {
+    const buttons = menuSection.querySelectorAll('[data-category]');
+    const items = menuSection.querySelectorAll('[data-menu-item]');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        // Update button styles
+        buttons.forEach(btn => {
+          btn.classList.remove('bg-accent', 'text-foreground');
+          btn.classList.add('bg-background', 'text-foreground/70');
+        });
+        button.classList.remove('bg-background', 'text-foreground/70');
+        button.classList.add('bg-accent', 'text-foreground');
+
+        // Filter items
+        items.forEach(item => {
+          const itemCategory = item.getAttribute('data-item-category');
+          if (category === 'all' || itemCategory === category) {
+            (item as HTMLElement).style.display = '';
+          } else {
+            (item as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+</script>

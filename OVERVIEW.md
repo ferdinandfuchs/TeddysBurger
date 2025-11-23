@@ -4,8 +4,10 @@
 
 - `.gitignore` - Git ignore rules
 - `.prettierrc` - Prettier configuration
+- `.env.example` - Environment variables template for Tina Cloud
 - `astro.config.mjs` - Astro framework configuration
 - `eslint.config.js` - ESLint configuration
+- `netlify.toml` - Netlify deployment configuration
 - `package.json` - Project dependencies and scripts
 - `package-lock.json` - Locked dependency versions
 - `tsconfig.json` - TypeScript configuration
@@ -16,6 +18,8 @@
 ## docs/
 
 - `DevelopmentPlan.md` - Step-by-step implementation plan
+- `editor-guide.md` - Content editing guide for Tina CMS
+- `deployment-guide.md` - Deployment and Tina Cloud setup guide
 
 ## tina/
 

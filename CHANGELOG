@@ -1,0 +1,7 @@
+# Changelog
+
+## 2026-03-22
+- Upgrade TinaCMS from v2.9.5 to v3.6.3 and @tinacms/cli from v1.12.4 to v2.x
+  - New features: half-width fields, fuzzy search, file history, improved date picker, better media manager
+  - Security patches included
+- Make footer background fully black (#000000 instead of #111111)

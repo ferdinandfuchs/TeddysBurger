@@ -5,6 +5,7 @@ import Menu from '../components/Menu.astro';
 import Location from '../components/Location.astro';
 import Gallery from '../components/Gallery.astro';
 import Contact from '../components/Contact.astro';
+import Reviews from '../components/Reviews.astro';
 import Footer from '../components/Footer.astro';
 import client from '../../tina/__generated__/client';
 
@@ -14,6 +15,7 @@ let pageContent: any = null;
 let menuItems: any[] = [];
 let locationData: any = null;
 let galleryImages: any[] = [];
+let reviews: any[] = [];
 
 try {
   // Fetch site settings
@@ -55,6 +57,14 @@ try {
   console.warn('Could not fetch gallery images:', e);
 }
 
+try {
+  // Fetch reviews
+  const reviewResponse = await client.queries.reviewConnection();
+  reviews = reviewResponse.data.reviewConnection.edges?.map((edge: any) => edge.node) || [];
+} catch (e) {
+  console.warn('Could not fetch reviews:', e);
+}
+
 // Transform menu items to component format
 const formattedMenuItems = menuItems.map((item: any) => ({
   name: item.name,
@@ -72,6 +82,13 @@ const formattedGalleryImages = galleryImages.map((item: any) => ({
   order: item.order ?? 0,
 }));
 
+const formattedReviews = reviews.map((item: any) => ({
+  author: item.author,
+  text: item.text,
+  rating: item.rating,
+  date: item.date,
+}));
+
 ---
 
 <BaseLayout>
@@ -84,6 +101,8 @@ const formattedGalleryImages = galleryImages.map((item: any) => ({
       buttonText={pageContent?.hero?.buttonText || "Zur Speisekarte"}
       orderUrl="https://teddys-burger.order.dish.co/menus"
     />
+
+    <Reviews reviews={formattedReviews} />
 
     <Menu items={formattedMenuItems} />
 

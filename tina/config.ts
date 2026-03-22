@@ -2,7 +2,7 @@ import { defineConfig } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
-  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || 'main';
+  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || 'master';
 
 export default defineConfig({
   branch,
@@ -336,6 +336,50 @@ export default defineConfig({
         defaultItem: {
           order: 0,
         },
+      },
+      {
+        name: 'review',
+        label: 'Reviews',
+        path: 'content/reviews',
+        format: 'json',
+        ui: {
+          filename: {
+            readonly: true,
+            slugify: (values) => {
+              return values?.author?.toLowerCase().replace(/\s+/g, '-') || `review-${Date.now()}`;
+            },
+          },
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'author',
+            label: 'Author Name',
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'text',
+            label: 'Review Text',
+            required: true,
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'number',
+            name: 'rating',
+            label: 'Rating (1-5)',
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'date',
+            label: 'Review Date',
+            description: 'e.g. "vor 2 Monaten" or "März 2026"',
+          },
+        ],
       },
     ],
   },

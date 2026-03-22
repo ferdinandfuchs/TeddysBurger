@@ -13,11 +13,13 @@ interface MenuItemData {
 interface Props {
   title?: string;
   items: MenuItemData[];
+  orderUrl?: string;
 }
 
 const {
   title = "Speisekarte",
   items = [],
+  orderUrl,
 } = Astro.props;
 
 // Group items by category
@@ -78,6 +80,7 @@ const sortedItems = [...items].sort((a, b) => {
               price={item.price}
               image={item.image}
               available={item.available}
+              orderUrl={orderUrl}
             />
           </div>
         ))}

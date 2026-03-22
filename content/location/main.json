@@ -4,16 +4,20 @@
   "phone": "0711 340 89110",
   "openingHours": [
     {
-      "day": "Montag - Freitag",
-      "hours": "11:00 - 22:00"
+      "day": "Montag",
+      "hours": "Geschlossen"
+    },
+    {
+      "day": "Dienstag - Freitag",
+      "hours": "11:30–14:30, 17:30–22:30"
     },
     {
       "day": "Samstag",
-      "hours": "12:00 - 23:00"
+      "hours": "17:00–22:30"
     },
     {
       "day": "Sonntag",
-      "hours": "12:00 - 21:00"
+      "hours": "14:00–21:00"
     }
   ],
   "image": "/uploads/location/restaurant-exterior.jpg"

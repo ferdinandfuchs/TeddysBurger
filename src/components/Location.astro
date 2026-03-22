@@ -81,7 +81,7 @@ const phoneLink = phone?.replace(/[\s\-\(\)]/g, '') || '';
         <div class="relative">
           <div class="aspect-video md:aspect-square overflow-hidden rounded-lg">
             <iframe
-              src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent("Teddys Burger, " + address)}&output=embed`}
               width="100%"
               height="100%"
               style="border:0;"
